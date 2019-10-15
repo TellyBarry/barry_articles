@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title  %}Edition d'une annonce {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Modifier annonce </h1>
+
+        {{ form_start(form) }}
+
+        <input type="hidden" id="widgets-counter" value="0"></input-type>
+
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">Créer la nouvelle annonce</button>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

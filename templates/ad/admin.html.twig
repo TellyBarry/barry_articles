@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+ {% block body %}
+
+<table  class="table table-hover">
+
+    
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">libelle</th>
+      <th scope="col">prix</th>
+      <th scope="col">Column heading</th>
+    </tr>
+  </thead>
+    {% for ad in ads %}
+<tbody>
+    <tr class="table-active" id="block_{{ad.id}}">
+      <th scope="row">{{ad.Id}}</th>
+      <td>{{ad.libelle}}</td>
+      <td>{{ad.prix}}</td>
+      <td><a href="/ads/{{ad.id}}/edit"><button type="button" class="btn btn-success" >Modifier</button></a>
+      <button type="button" data-action="delete" data-target="#block_{{ad.id}}" class="btn btn-danger">Supprimer</button></td>
+    </tr>
+  {% endfor %}
+  </table>
+
+ {% endblock %}   
+
+ {% block javascripts %}
+ <script>
+    function handledeleteButtons() {
+        $('button[data-action="delete"]').click(function(){
+            const target = this.dataset.target;
+            $(target).remove();
+        })
+    }
+
+    handledeleteButtons();
+</script>
+ {% endblock %}
