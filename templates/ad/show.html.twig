@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ad.libelle}}
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-8">
+            <img src="{{ad.image}}"  style="width:100%;">
+            <h1> {{ad.libelle}} </h1>
+            <p>{{ad.description}} </p>
+            
+                <button type="button" class="btn btn-success mt-3 button1">Reserver maintenant ! <br>{{ad.prix}} &euro;</button>
+        </div>
+
+    
+{% endblock %}

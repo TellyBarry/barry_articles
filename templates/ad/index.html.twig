@@ -1,0 +1,33 @@
+ {% extends 'base.html.twig' %}
+
+
+ {% block body %}
+ 
+ <div class="container">
+    <div class="row">
+    
+            {% for ad in ads %}
+            
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3 ">
+                        <div class="card-header text-center">
+                             <small> Pas encore evalué </small>
+                        </div>
+                      <img src="{{ad.image}}" alt="" style="height:200px;width:100%;display:block;">
+                    
+            
+                    <div class="card-body">
+                        <h4 class="card-title">{{ad.libelle}}</h4>
+                        <p class="card-text"> {{ad.description}} </p>
+                        <a href="/ads/{{ad.id}}"><button type="button" class="btn btn-success mt-3 button1">Reserver maintenant ! <br>{{ad.prix}} &euro;</button></a>
+
+                    </div>
+                    </div> 
+                 </div>
+            {% endfor %}     
+    </div>
+</div>    
+{% endblock %}   
+           
+
+
